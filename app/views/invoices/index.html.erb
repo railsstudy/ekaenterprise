@@ -9,7 +9,7 @@
     </tr>
   <% @invoices.each do |invoice| %>
     <tr>
-        <td><%= invoice.date %></td>
+      <td><%= invoice.date.strftime("%Y/%m/%d") %></td>
         <td><%= invoice.company %></td>
         <td><%= invoice.tax %></td>
         <td><%= invoice.salesperson %></td>
@@ -18,11 +18,11 @@
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                    Action <span class="caret"></span>
               </button>
-                <ul class="dropdown-menu" role="menu">
-                  <li><%= link_to "Show", invoice, class: "btn btn-link" %></li>
-                  <li><%= link_to "Edit", edit_invoice_path(invoice), class: "btn btn-link" %></li>
-                  <li><%= link_to "Destroy", invoice, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></li>
-                </ul>
+              <ul class="dropdown-menu" role="menu">
+                <li><%= link_to "Show", invoice, class: "btn btn-link" %></li>
+                <li><%= link_to "Edit", edit_invoice_path(invoice), class: "btn btn-link" %></li>
+                <li><%= link_to "Destroy", invoice, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-link" %></li>
+              </ul>
           <div>
        </td>
     </tr>  
